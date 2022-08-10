@@ -1,0 +1,12 @@
+{
+    "files.associations": {
+        "*.check": "bibtex",
+        "s21_calculator.h": "c",
+        "complex": "c",
+        "cmath": "c",
+        "s21_structures.h": "c",
+        "atomic": "c",
+        "bitset": "c",
+        "deque": "c"
+    }
+}

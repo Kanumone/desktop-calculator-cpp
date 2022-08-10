@@ -1,0 +1,173 @@
+#include <check.h>
+
+#include "s21_calculator.h"
+#include "s21_parser.h"
+
+#test simple_cases
+
+char exp_1[] = "1 + 2";
+s21_deque_t *rpn_1 = s21_parse_exp(exp_1);
+
+double result_1 = s21_calculate_rpn(rpn_1, 0);
+s21_delete_deque(rpn_1);
+ck_assert_double_eq_tol(3.0, result_1, 7);
+
+char exp_2[] = "5 * 4";
+s21_deque_t *rpn_2 = s21_parse_exp(exp_2);
+
+double result_2 = s21_calculate_rpn(rpn_2, 0);
+s21_delete_deque(rpn_2);
+ck_assert_double_eq_tol(20.0, result_2, 7);
+
+char exp_3[] = "1 + 2 * 5";
+s21_deque_t *rpn_3 = s21_parse_exp(exp_3);
+
+double result_3 = s21_calculate_rpn(rpn_3, 0);
+s21_delete_deque(rpn_3);
+ck_assert_double_eq_tol(11.0, result_3, 7);
+
+char exp_4[] = "5.75 + 2.5";
+s21_deque_t *rpn_4 = s21_parse_exp(exp_4);
+
+double result_4 = s21_calculate_rpn(rpn_4, 0);
+s21_delete_deque(rpn_4);
+ck_assert_double_eq_tol(7.25, result_4, 7);
+
+char exp_5[] = "100 - 200";
+s21_deque_t *rpn_5 = s21_parse_exp(exp_5);
+
+double result_5 = s21_calculate_rpn(rpn_5, 0);
+s21_delete_deque(rpn_5);
+ck_assert_double_eq_tol(-100.0, result_5, 7);
+
+char exp_6[] = "5 mod 2";
+s21_deque_t *rpn_6 = s21_parse_exp(exp_6);
+
+double result_6 = s21_calculate_rpn(rpn_6, 0);
+s21_delete_deque(rpn_6);
+ck_assert_double_eq_tol(1.0, result_6, 7);
+
+char exp_7[] = "5.75 + 2.5";
+s21_deque_t *rpn_7 = s21_parse_exp(exp_7);
+
+double result_7 = s21_calculate_rpn(rpn_7, 0);
+s21_delete_deque(rpn_7);
+ck_assert_double_eq_tol(7.25, result_7, 7);
+
+char exp_8[] = "100 / 50";
+s21_deque_t *rpn_8 = s21_parse_exp(exp_8);
+
+double result_8 = s21_calculate_rpn(rpn_8, 0);
+s21_delete_deque(rpn_8);
+ck_assert_double_eq_tol(2.0, result_8, 7);
+
+#test func_cases
+
+char exp_1[] = "sin(150)";
+s21_deque_t *rpn_1 = s21_parse_exp(exp_1);
+
+double result_1 = s21_calculate_rpn(rpn_1, 0);
+s21_delete_deque(rpn_1);
+ck_assert_double_eq_tol(3.0, result_1, 7);
+
+char exp_2[] = "-acos(0.005)";
+s21_deque_t *rpn_2 = s21_parse_exp(exp_2);
+
+double result_2 = s21_calculate_rpn(rpn_2, 0);
+s21_delete_deque(rpn_2);
+ck_assert_double_eq_tol(-1.56579631, result_2, 7);
+
+char exp_3[] = "tan(0)";
+s21_deque_t *rpn_3 = s21_parse_exp(exp_3);
+
+double result_3 = s21_calculate_rpn(rpn_3, 0);
+s21_delete_deque(rpn_3);
+ck_assert_double_eq_tol(0.0, result_3, 7);
+
+char exp_4[] = "atan(-100000.0)";
+s21_deque_t *rpn_4 = s21_parse_exp(exp_4);
+
+double result_4 = s21_calculate_rpn(rpn_4, 0);
+s21_delete_deque(rpn_4);
+ck_assert_double_eq_tol(-1.57078633, result_4, 7);
+
+char exp_5[] = "log(1534) - (-ln76)";
+s21_deque_t *rpn_5 = s21_parse_exp(exp_5);
+
+double result_5 = s21_calculate_rpn(rpn_5, 0);
+s21_delete_deque(rpn_5);
+ck_assert_double_eq_tol(7.5165586999, result_5, 7);
+
+char exp_6[] = "sqrt(25) - sqrt(4)";
+s21_deque_t *rpn_6 = s21_parse_exp(exp_6);
+
+double result_6 = s21_calculate_rpn(rpn_6, 0);
+s21_delete_deque(rpn_6);
+ck_assert_double_eq_tol(3.0, result_6, 7);
+
+char exp_7[] = "asin(1)-cos(25)";
+s21_deque_t *rpn_7 = s21_parse_exp(exp_7);
+
+double result_7 = s21_calculate_rpn(rpn_7, 0);
+s21_delete_deque(rpn_7);
+ck_assert_double_eq_tol(0.5795935, result_7, 7);
+
+char exp_8[] = "sqrt(-25)";
+s21_deque_t *rpn_8 = s21_parse_exp(exp_8);
+
+double result_8 = s21_calculate_rpn(rpn_8, 0);
+s21_delete_deque(rpn_8);
+ck_assert_double_nan(result_8);
+
+#test x_case
+
+char exp_1[] = "sin(x)";
+s21_deque_t *rpn_1 = s21_parse_exp(exp_1);
+
+double result_1 = s21_calculate_rpn(rpn_1, 0.5);
+s21_delete_deque(rpn_1);
+ck_assert_double_eq_tol(0.4794255386, result_1, 7);
+
+char exp_2[] = "x^x";
+s21_deque_t *rpn_2 = s21_parse_exp(exp_2);
+
+double result_2 = s21_calculate_rpn(rpn_2, 5);
+s21_delete_deque(rpn_2);
+ck_assert_double_eq_tol(3125.0, result_2, 7);
+
+char exp_3[] = "1 + 2 * x";
+s21_deque_t *rpn_3 = s21_parse_exp(exp_3);
+
+double result_3 = s21_calculate_rpn(rpn_3, 5.0);
+s21_delete_deque(rpn_3);
+ck_assert_double_eq_tol(11.0, result_3, 7);
+
+#test exp_case
+
+char exp_1[] = "1e10 * 1e-10";
+s21_deque_t *rpn_1 = s21_parse_exp(exp_1);
+
+double result_1 = s21_calculate_rpn(rpn_1, 0.5);
+s21_delete_deque(rpn_1);
+ck_assert_double_eq_tol(1.0, result_1, 7);
+
+char exp_2[] = "5 / 1e5";
+s21_deque_t *rpn_2 = s21_parse_exp(exp_2);
+
+double result_2 = s21_calculate_rpn(rpn_2, 5);
+s21_delete_deque(rpn_2);
+ck_assert_double_eq_tol(5e-5, result_2, 7);
+
+#test structure_cases
+
+lex_t lex = {.priority = S21_NUMBER, .data.operand = 10.0};
+s21_deque_t *deque = s21_create_deque();
+s21_push_front(deque, lex);
+add_before(deque->front, lex);
+add_after(deque->front->prev, lex);
+add_before(deque->back, lex);
+deque->size += 3;
+s21_push_front(deque, lex);
+s21_clear_deque(deque);
+s21_pop_front(deque);
+s21_delete_deque(deque);
