@@ -1,23 +1,21 @@
 #include "s21_parser.h"
 
 char *get_number(char *exp_ptr, lex_t *number) {
-  char buff[70];
-  size_t i = 0;
-
   if (*exp_ptr == 'x') {
-    buff[i++] = *exp_ptr;
     exp_ptr++;
     number->data.opr = 15;
   } else {
-    while ((*exp_ptr >= '0' && *exp_ptr <= '9') || *exp_ptr == '.' || *exp_ptr == 'e') {
-      if (*exp_ptr == 'e' && strncmp(exp_ptr, "e-", 2) == 0) {
+    char buff[70];
+    size_t i = 0;
+    while ((*exp_ptr >= '0' && *exp_ptr <= '9') || *exp_ptr == '.' || *exp_ptr == 'E') {
+      if (*exp_ptr == 'E') {
         buff[i++] = *exp_ptr;
         exp_ptr++;
       }
       buff[i++] = *exp_ptr;
       exp_ptr++;
     }
-    buff[i] = 0;
+    buff[i] = '\0';
     number->data.operand = atof(buff);
   }
 
@@ -83,6 +81,12 @@ char *get_opr(char *exp_ptr, lex_t *op) {
   return exp_ptr;
 }
 
+/**
+ * @brief Функция, производящая парсинг входной строки в обратную польскую нотацию
+ *
+ * @param exp Входная строка
+ * @return Очередь с полученной обратной польской нотацией
+ */
 s21_deque_t *s21_parse_exp(char *exp) {
   char *exp_ptr = exp;
   lex_t prev_lex = {.priority = S21_ERROR};

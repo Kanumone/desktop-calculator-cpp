@@ -1,8 +1,10 @@
+/*! \file */
 #ifndef SRC_INCLUDE_S21_STRUCTURES_H_
 #define SRC_INCLUDE_S21_STRUCTURES_H_
 
 #include <stdlib.h>
 
+// Набор приоритетов лексем в обратной польской нотации
 enum priority {
   S21_ERROR = -3,
   S21_NUMBER,
@@ -14,14 +16,16 @@ enum priority {
   S21_FUNC
 };
 
+// Структура лексемы
 typedef struct lex {
-  short priority;
-  union {
+  short priority;  ///< Приоритет лексемы
+  union {  ///< Объединение для хранение кода операции или значения операнда
     double operand;
     int opr;
   } data;
 } lex_t;
 
+// Структура элемента двусвязного списка
 typedef struct node {
   struct node *next;
   struct node *prev;
@@ -29,9 +33,9 @@ typedef struct node {
 } list_t;
 
 list_t *add_after(list_t *current_node, lex_t lex);
-list_t *add_before(list_t *current_node, lex_t lex);
 void delete_node(list_t *node);
 
+// Структура двунаправленной очереди
 typedef struct s21_deque {
   list_t *front;
   list_t *back;

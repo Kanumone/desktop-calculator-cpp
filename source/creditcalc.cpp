@@ -1,37 +1,45 @@
-#include "creditcalc.h"
-
-#include <QDebug>
+#include "creditcalc.hpp"
 
 #include "ui_creditcalc.h"
 
 CreditCalc::CreditCalc(QWidget *parent) : QWidget(parent), ui(new Ui::CreditCalc) {
   ui->setupUi(this);
+  QRegularExpressionValidator *pVal = new QRegularExpressionValidator(QRegularExpression("^\\d{1,100}"));
+  ui->lineEdit_money->setValidator(pVal);
 }
 
 CreditCalc::~CreditCalc() { delete ui; }
 
+/*!
+Метод, выполняющий расчет кредита
+---------------------------------
+Возможен расчет кредитов двух типов:
+- Аннуитетный
+- Дифференцированный
+ */
 void CreditCalc::on_pushButton_calculate_clicked() {
-  double amount = 0.0, monthPercent, monthPayment, sum;
+  double amount = 0.0;
   int period = ui->spinBox_period->text().toInt();
   int creditType = ui->comboBox_type->currentIndex();
-  sum = ui->lineEdit_money->text().toDouble();
-  monthPercent = ui->lineEdit_percent->text().toDouble() / (12.0 * 100);
+  double sum = ui->lineEdit_money->text().toDouble();
+  double monthPercent = ui->doubleSpinBox_percent->text().toDouble() / (12.0 * 100);
   if (creditType == 0) {
-    monthPayment = sum * monthPercent / (1 - pow(1 + monthPercent, -36));
+    double monthPayment = sum * monthPercent / (1 - pow(1 + monthPercent, -period));
     amount = period * monthPayment;
     ui->label_mounthPayment->setText(QString::number(monthPayment));
   } else {
-    double first = sum / period + sum * monthPercent;
+    QString result = QString::number(sum / period + sum * monthPercent);
     double currentSum = sum;
     double constPart = sum / period;
+    double monthPayment = 0.0;
     while (period > 0) {
       monthPayment = constPart + currentSum * monthPercent;
       currentSum -= constPart;
       amount += monthPayment;
       period--;
     }
-
-    QString result = QString::number(first) + "-" + QString::number(monthPayment);
+    result.append("...");
+    result.append(QString::number(monthPayment));
     ui->label_mounthPayment->setText(result);
   }
 

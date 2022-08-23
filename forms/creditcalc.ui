@@ -11,7 +11,7 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>Form</string>
+   <string>Credit Calculator</string>
   </property>
   <layout class="QVBoxLayout" name="verticalLayout_10">
    <item>
@@ -34,7 +34,29 @@
           </widget>
          </item>
          <item>
-          <widget class="QLineEdit" name="lineEdit_money"/>
+          <widget class="QLineEdit" name="lineEdit_money">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Expanding" vsizetype="Maximum">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="minimumSize">
+            <size>
+             <width>0</width>
+             <height>15</height>
+            </size>
+           </property>
+           <property name="inputMask">
+            <string/>
+           </property>
+           <property name="maxLength">
+            <number>32767</number>
+           </property>
+           <property name="clearButtonEnabled">
+            <bool>true</bool>
+           </property>
+          </widget>
          </item>
         </layout>
        </item>
@@ -89,7 +111,23 @@
           </widget>
          </item>
          <item>
-          <widget class="QSpinBox" name="spinBox_period"/>
+          <widget class="QSpinBox" name="spinBox_period">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Expanding" vsizetype="Maximum">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="minimumSize">
+            <size>
+             <width>0</width>
+             <height>23</height>
+            </size>
+           </property>
+           <property name="maximum">
+            <number>10000</number>
+           </property>
+          </widget>
          </item>
         </layout>
        </item>
@@ -109,7 +147,23 @@
           </widget>
          </item>
          <item>
-          <widget class="QLineEdit" name="lineEdit_percent"/>
+          <widget class="QDoubleSpinBox" name="doubleSpinBox_percent">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Expanding" vsizetype="Maximum">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="minimumSize">
+            <size>
+             <width>0</width>
+             <height>23</height>
+            </size>
+           </property>
+           <property name="singleStep">
+            <double>0.500000000000000</double>
+           </property>
+          </widget>
          </item>
         </layout>
        </item>
@@ -144,7 +198,7 @@
        <item>
         <widget class="QLabel" name="label_sum">
          <property name="text">
-          <string>100</string>
+          <string>0</string>
          </property>
          <property name="alignment">
           <set>Qt::AlignCenter</set>
@@ -171,7 +225,7 @@
        <item>
         <widget class="QLabel" name="label_mounthPayment">
          <property name="text">
-          <string>10</string>
+          <string>0</string>
          </property>
          <property name="alignment">
           <set>Qt::AlignCenter</set>
@@ -198,7 +252,7 @@
        <item>
         <widget class="QLabel" name="label_overpayment">
          <property name="text">
-          <string>1</string>
+          <string>0</string>
          </property>
          <property name="alignment">
           <set>Qt::AlignCenter</set>

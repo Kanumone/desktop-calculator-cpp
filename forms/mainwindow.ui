@@ -11,7 +11,7 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>MainWindow</string>
+   <string>Engineering Calculator</string>
   </property>
   <widget class="QWidget" name="centralwidget">
    <layout class="QVBoxLayout" name="verticalLayout">
@@ -21,6 +21,9 @@
        <widget class="QPushButton" name="pushButton_graphics">
         <property name="text">
          <string>Graphic</string>
+        </property>
+        <property name="shortcut">
+         <string>F</string>
         </property>
        </widget>
       </item>
@@ -137,8 +140,8 @@ QPushButton:pressed {
       <property name="spacing">
        <number>1</number>
       </property>
-      <item row="5" column="2">
-       <widget class="QPushButton" name="pushButton_cos">
+      <item row="6" column="1">
+       <widget class="QPushButton" name="pushButton_asin">
         <property name="minimumSize">
          <size>
           <width>60</width>
@@ -153,7 +156,7 @@ QPushButton:pressed {
         </property>
         <property name="styleSheet">
          <string notr="true">QPushButton {
-  font-size: 15px;
+  font-size: 16px;
   background-color: rgb(214, 214, 214);
   border: 1px solid gray;
   border-radius: 8px;
@@ -164,7 +167,480 @@ QPushButton:pressed {
 }</string>
         </property>
         <property name="text">
-         <string>cos</string>
+         <string>asin</string>
+        </property>
+        <attribute name="buttonGroup">
+         <string notr="true">function_buttons_group</string>
+        </attribute>
+       </widget>
+      </item>
+      <item row="5" column="5">
+       <widget class="QPushButton" name="pushButton_8">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="minimumSize">
+         <size>
+          <width>60</width>
+          <height>65</height>
+         </size>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>150</width>
+          <height>16777215</height>
+         </size>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QPushButton {
+  font-size: 20px;
+  background-color: rgb(224, 224, 224);
+  border: 1px solid gray;
+  border-radius: 8px;
+}
+QPushButton:pressed {
+    background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                                      stop: 0 #dadbde, stop: 1 #f6f7fa);
+}</string>
+        </property>
+        <property name="text">
+         <string>8</string>
+        </property>
+        <property name="shortcut">
+         <string>8</string>
+        </property>
+        <attribute name="buttonGroup">
+         <string notr="true">main_buttons_group</string>
+        </attribute>
+       </widget>
+      </item>
+      <item row="3" column="5">
+       <widget class="QPushButton" name="pushButton_2">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="minimumSize">
+         <size>
+          <width>60</width>
+          <height>65</height>
+         </size>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>150</width>
+          <height>16777215</height>
+         </size>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QPushButton {
+  font-size: 20px;
+  background-color: rgb(224, 224, 224);
+  border: 1px solid gray;
+  border-radius: 8px;
+}
+QPushButton:pressed {
+    background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                                      stop: 0 #dadbde, stop: 1 #f6f7fa);
+}</string>
+        </property>
+        <property name="text">
+         <string>2</string>
+        </property>
+        <property name="shortcut">
+         <string>2</string>
+        </property>
+        <attribute name="buttonGroup">
+         <string notr="true">main_buttons_group</string>
+        </attribute>
+       </widget>
+      </item>
+      <item row="6" column="2">
+       <widget class="QPushButton" name="pushButton_acos">
+        <property name="minimumSize">
+         <size>
+          <width>60</width>
+          <height>65</height>
+         </size>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>150</width>
+          <height>16777215</height>
+         </size>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QPushButton {
+  font-size: 16px;
+  background-color: rgb(214, 214, 214);
+  border: 1px solid gray;
+  border-radius: 8px;
+}
+QPushButton:pressed {
+    background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                                      stop: 0 #BEBEBE, stop: 1 #D7D7D7);
+}</string>
+        </property>
+        <property name="text">
+         <string>acos</string>
+        </property>
+        <attribute name="buttonGroup">
+         <string notr="true">function_buttons_group</string>
+        </attribute>
+       </widget>
+      </item>
+      <item row="5" column="1">
+       <widget class="QPushButton" name="pushButton_sin">
+        <property name="minimumSize">
+         <size>
+          <width>60</width>
+          <height>65</height>
+         </size>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>150</width>
+          <height>16777215</height>
+         </size>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QPushButton {
+  font-size: 16px;
+  background-color: rgb(214, 214, 214);
+  border: 1px solid gray;
+  border-radius: 8px;
+}
+QPushButton:pressed {
+    background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                                      stop: 0 #BEBEBE, stop: 1 #D7D7D7);
+}</string>
+        </property>
+        <property name="text">
+         <string>sin</string>
+        </property>
+        <attribute name="buttonGroup">
+         <string notr="true">function_buttons_group</string>
+        </attribute>
+       </widget>
+      </item>
+      <item row="6" column="4" colspan="2">
+       <widget class="QPushButton" name="pushButton_0">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="minimumSize">
+         <size>
+          <width>60</width>
+          <height>65</height>
+         </size>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>150</width>
+          <height>16777215</height>
+         </size>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QPushButton {
+  font-size: 20px;
+  background-color: rgb(224, 224, 224);
+  border: 1px solid gray;
+  border-radius: 8px;
+}
+QPushButton:pressed {
+    background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                                      stop: 0 #dadbde, stop: 1 #f6f7fa);
+}</string>
+        </property>
+        <property name="text">
+         <string>0</string>
+        </property>
+        <property name="shortcut">
+         <string>0</string>
+        </property>
+        <attribute name="buttonGroup">
+         <string notr="true">main_buttons_group</string>
+        </attribute>
+       </widget>
+      </item>
+      <item row="2" column="6">
+       <widget class="QPushButton" name="pushButton_mod">
+        <property name="minimumSize">
+         <size>
+          <width>60</width>
+          <height>65</height>
+         </size>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>150</width>
+          <height>16777215</height>
+         </size>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QPushButton {
+  font-size: 16px;
+  background-color: rgb(214, 214, 214);
+  border: 1px solid gray;
+  border-radius: 8px;
+}
+QPushButton:pressed {
+    background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                                      stop: 0 #BEBEBE, stop: 1 #D7D7D7);
+}</string>
+        </property>
+        <property name="text">
+         <string>mod</string>
+        </property>
+        <property name="shortcut">
+         <string>M</string>
+        </property>
+        <attribute name="buttonGroup">
+         <string notr="true">main_buttons_group</string>
+        </attribute>
+       </widget>
+      </item>
+      <item row="2" column="3">
+       <widget class="QPushButton" name="pushButton_X">
+        <property name="minimumSize">
+         <size>
+          <width>60</width>
+          <height>65</height>
+         </size>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>150</width>
+          <height>16777215</height>
+         </size>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QPushButton {
+  font-size: 16px;
+  background-color: rgb(214, 214, 214);
+  border: 1px solid gray;
+  border-radius: 8px;
+}
+QPushButton:pressed {
+    background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                                      stop: 0 #BEBEBE, stop: 1 #D7D7D7);
+}</string>
+        </property>
+        <property name="text">
+         <string>x</string>
+        </property>
+        <property name="shortcut">
+         <string>X</string>
+        </property>
+        <attribute name="buttonGroup">
+         <string notr="true">main_buttons_group</string>
+        </attribute>
+       </widget>
+      </item>
+      <item row="4" column="4">
+       <widget class="QPushButton" name="pushButton_4">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="minimumSize">
+         <size>
+          <width>60</width>
+          <height>65</height>
+         </size>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>150</width>
+          <height>16777215</height>
+         </size>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QPushButton {
+  font-size: 20px;
+  background-color: rgb(224, 224, 224);
+  border: 1px solid gray;
+  border-radius: 8px;
+}
+QPushButton:pressed {
+    background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                                      stop: 0 #dadbde, stop: 1 #f6f7fa);
+}</string>
+        </property>
+        <property name="text">
+         <string>4</string>
+        </property>
+        <property name="shortcut">
+         <string>4</string>
+        </property>
+        <attribute name="buttonGroup">
+         <string notr="true">main_buttons_group</string>
+        </attribute>
+       </widget>
+      </item>
+      <item row="4" column="7">
+       <widget class="QPushButton" name="pushButton_sub">
+        <property name="minimumSize">
+         <size>
+          <width>60</width>
+          <height>65</height>
+         </size>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>150</width>
+          <height>16777215</height>
+         </size>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QPushButton {
+  font-size: 20px;
+  background-color: rgb(255, 157, 96);
+  color: white; 
+  border: 1px solid gray;
+  border-radius: 8px;
+}
+
+QPushButton:pressed {
+    background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                                      stop: 0 #FF7832, stop: 1 #FF9739);
+}</string>
+        </property>
+        <property name="text">
+         <string>-</string>
+        </property>
+        <property name="shortcut">
+         <string>-</string>
+        </property>
+        <attribute name="buttonGroup">
+         <string notr="true">main_buttons_group</string>
+        </attribute>
+       </widget>
+      </item>
+      <item row="3" column="6">
+       <widget class="QPushButton" name="pushButton_3">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="minimumSize">
+         <size>
+          <width>60</width>
+          <height>65</height>
+         </size>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>150</width>
+          <height>16777215</height>
+         </size>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QPushButton {
+  font-size: 20px;
+  background-color: rgb(224, 224, 224);
+  border: 1px solid gray;
+  border-radius: 8px;
+}
+QPushButton:pressed {
+    background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                                      stop: 0 #dadbde, stop: 1 #f6f7fa);
+}</string>
+        </property>
+        <property name="text">
+         <string>3</string>
+        </property>
+        <property name="shortcut">
+         <string>3</string>
+        </property>
+        <attribute name="buttonGroup">
+         <string notr="true">main_buttons_group</string>
+        </attribute>
+       </widget>
+      </item>
+      <item row="5" column="6">
+       <widget class="QPushButton" name="pushButton_9">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="minimumSize">
+         <size>
+          <width>60</width>
+          <height>65</height>
+         </size>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>150</width>
+          <height>16777215</height>
+         </size>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QPushButton {
+  font-size: 20px;
+  background-color: rgb(224, 224, 224);
+  border: 1px solid gray;
+  border-radius: 8px;
+}
+QPushButton:pressed {
+    background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                                      stop: 0 #dadbde, stop: 1 #f6f7fa);
+}</string>
+        </property>
+        <property name="text">
+         <string>9</string>
+        </property>
+        <property name="shortcut">
+         <string>9</string>
+        </property>
+        <attribute name="buttonGroup">
+         <string notr="true">main_buttons_group</string>
+        </attribute>
+       </widget>
+      </item>
+      <item row="5" column="3">
+       <widget class="QPushButton" name="pushButton_tan">
+        <property name="minimumSize">
+         <size>
+          <width>60</width>
+          <height>65</height>
+         </size>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>150</width>
+          <height>16777215</height>
+         </size>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QPushButton {
+  font-size: 16px;
+  background-color: rgb(214, 214, 214);
+  border: 1px solid gray;
+  border-radius: 8px;
+}
+QPushButton:pressed {
+    background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                                      stop: 0 #BEBEBE, stop: 1 #D7D7D7);
+}</string>
+        </property>
+        <property name="text">
+         <string>tan</string>
         </property>
         <attribute name="buttonGroup">
          <string notr="true">function_buttons_group</string>
@@ -214,42 +690,8 @@ QPushButton:pressed {
         </attribute>
        </widget>
       </item>
-      <item row="4" column="1">
-       <widget class="QPushButton" name="pushButton_sqrt">
-        <property name="minimumSize">
-         <size>
-          <width>60</width>
-          <height>65</height>
-         </size>
-        </property>
-        <property name="maximumSize">
-         <size>
-          <width>150</width>
-          <height>16777215</height>
-         </size>
-        </property>
-        <property name="styleSheet">
-         <string notr="true">QPushButton {
-  font-size: 15px;
-  background-color: rgb(214, 214, 214);
-  border: 1px solid gray;
-  border-radius: 8px;
-}
-QPushButton:pressed {
-    background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
-                                      stop: 0 #BEBEBE, stop: 1 #D7D7D7);
-}</string>
-        </property>
-        <property name="text">
-         <string>sqrt</string>
-        </property>
-        <attribute name="buttonGroup">
-         <string notr="true">function_buttons_group</string>
-        </attribute>
-       </widget>
-      </item>
-      <item row="2" column="7">
-       <widget class="QPushButton" name="pushButton_div">
+      <item row="3" column="7">
+       <widget class="QPushButton" name="pushButton_mul">
         <property name="minimumSize">
          <size>
           <width>60</width>
@@ -277,14 +719,124 @@ QPushButton:pressed {
 }</string>
         </property>
         <property name="text">
-         <string>/</string>
+         <string>*</string>
         </property>
         <property name="shortcut">
-         <string>/</string>
+         <string>*</string>
         </property>
         <attribute name="buttonGroup">
          <string notr="true">main_buttons_group</string>
         </attribute>
+       </widget>
+      </item>
+      <item row="5" column="2">
+       <widget class="QPushButton" name="pushButton_cos">
+        <property name="minimumSize">
+         <size>
+          <width>60</width>
+          <height>65</height>
+         </size>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>150</width>
+          <height>16777215</height>
+         </size>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QPushButton {
+  font-size: 16px;
+  background-color: rgb(214, 214, 214);
+  border: 1px solid gray;
+  border-radius: 8px;
+}
+QPushButton:pressed {
+    background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                                      stop: 0 #BEBEBE, stop: 1 #D7D7D7);
+}</string>
+        </property>
+        <property name="text">
+         <string>cos</string>
+        </property>
+        <attribute name="buttonGroup">
+         <string notr="true">function_buttons_group</string>
+        </attribute>
+       </widget>
+      </item>
+      <item row="6" column="7">
+       <widget class="QPushButton" name="pushButton_eq">
+        <property name="minimumSize">
+         <size>
+          <width>60</width>
+          <height>65</height>
+         </size>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>150</width>
+          <height>16777215</height>
+         </size>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QPushButton {
+  font-size: 20px;
+  background-color: rgb(255, 157, 96);
+  color: white; 
+  border: 1px solid gray;
+  border-radius: 8px;
+}
+
+QPushButton:pressed {
+    background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                                      stop: 0 #FF7832, stop: 1 #FF9739);
+}</string>
+        </property>
+        <property name="text">
+         <string>=</string>
+        </property>
+        <property name="shortcut">
+         <string>Return</string>
+        </property>
+       </widget>
+      </item>
+      <item row="6" column="6">
+       <widget class="QPushButton" name="pushButton_dot">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="minimumSize">
+         <size>
+          <width>60</width>
+          <height>65</height>
+         </size>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>150</width>
+          <height>16777215</height>
+         </size>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QPushButton {
+  font-size: 20px;
+  background-color: rgb(224, 224, 224);
+  border: 1px solid gray;
+  border-radius: 8px;
+}
+QPushButton:pressed {
+    background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                                      stop: 0 #dadbde, stop: 1 #f6f7fa);
+}</string>
+        </property>
+        <property name="text">
+         <string>.</string>
+        </property>
+        <property name="shortcut">
+         <string>.</string>
+        </property>
        </widget>
       </item>
       <item row="5" column="4">
@@ -346,7 +898,7 @@ QPushButton:pressed {
         </property>
         <property name="styleSheet">
          <string notr="true">QPushButton {
-  font-size: 15px;
+  font-size: 20px;
   border: 1px solid gray;
   background-color: rgb(234, 110, 84);
   color: white;
@@ -364,14 +916,8 @@ QPushButton:pressed {
         </property>
        </widget>
       </item>
-      <item row="4" column="6">
-       <widget class="QPushButton" name="pushButton_6">
-        <property name="sizePolicy">
-         <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
-          <horstretch>0</horstretch>
-          <verstretch>0</verstretch>
-         </sizepolicy>
-        </property>
+      <item row="4" column="1">
+       <widget class="QPushButton" name="pushButton_sqrt">
         <property name="minimumSize">
          <size>
           <width>60</width>
@@ -386,291 +932,7 @@ QPushButton:pressed {
         </property>
         <property name="styleSheet">
          <string notr="true">QPushButton {
-  font-size: 20px;
-  background-color: rgb(224, 224, 224);
-  border: 1px solid gray;
-  border-radius: 8px;
-}
-QPushButton:pressed {
-    background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
-                                      stop: 0 #dadbde, stop: 1 #f6f7fa);
-}</string>
-        </property>
-        <property name="text">
-         <string>6</string>
-        </property>
-        <property name="shortcut">
-         <string>6</string>
-        </property>
-        <attribute name="buttonGroup">
-         <string notr="true">main_buttons_group</string>
-        </attribute>
-       </widget>
-      </item>
-      <item row="5" column="6">
-       <widget class="QPushButton" name="pushButton_9">
-        <property name="sizePolicy">
-         <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
-          <horstretch>0</horstretch>
-          <verstretch>0</verstretch>
-         </sizepolicy>
-        </property>
-        <property name="minimumSize">
-         <size>
-          <width>60</width>
-          <height>65</height>
-         </size>
-        </property>
-        <property name="maximumSize">
-         <size>
-          <width>150</width>
-          <height>16777215</height>
-         </size>
-        </property>
-        <property name="styleSheet">
-         <string notr="true">QPushButton {
-  font-size: 20px;
-  background-color: rgb(224, 224, 224);
-  border: 1px solid gray;
-  border-radius: 8px;
-}
-QPushButton:pressed {
-    background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
-                                      stop: 0 #dadbde, stop: 1 #f6f7fa);
-}</string>
-        </property>
-        <property name="text">
-         <string>9</string>
-        </property>
-        <property name="shortcut">
-         <string>9</string>
-        </property>
-        <attribute name="buttonGroup">
-         <string notr="true">main_buttons_group</string>
-        </attribute>
-       </widget>
-      </item>
-      <item row="6" column="7">
-       <widget class="QPushButton" name="pushButton_eq">
-        <property name="minimumSize">
-         <size>
-          <width>60</width>
-          <height>65</height>
-         </size>
-        </property>
-        <property name="maximumSize">
-         <size>
-          <width>150</width>
-          <height>16777215</height>
-         </size>
-        </property>
-        <property name="styleSheet">
-         <string notr="true">QPushButton {
-  font-size: 20px;
-  background-color: rgb(255, 157, 96);
-  color: white; 
-  border: 1px solid gray;
-  border-radius: 8px;
-}
-
-QPushButton:pressed {
-    background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
-                                      stop: 0 #FF7832, stop: 1 #FF9739);
-}</string>
-        </property>
-        <property name="text">
-         <string>=</string>
-        </property>
-        <property name="shortcut">
-         <string>=</string>
-        </property>
-       </widget>
-      </item>
-      <item row="6" column="4" colspan="2">
-       <widget class="QPushButton" name="pushButton_0">
-        <property name="sizePolicy">
-         <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
-          <horstretch>0</horstretch>
-          <verstretch>0</verstretch>
-         </sizepolicy>
-        </property>
-        <property name="minimumSize">
-         <size>
-          <width>60</width>
-          <height>65</height>
-         </size>
-        </property>
-        <property name="maximumSize">
-         <size>
-          <width>150</width>
-          <height>16777215</height>
-         </size>
-        </property>
-        <property name="styleSheet">
-         <string notr="true">QPushButton {
-  font-size: 20px;
-  background-color: rgb(224, 224, 224);
-  border: 1px solid gray;
-  border-radius: 8px;
-}
-QPushButton:pressed {
-    background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
-                                      stop: 0 #dadbde, stop: 1 #f6f7fa);
-}</string>
-        </property>
-        <property name="text">
-         <string>0</string>
-        </property>
-        <property name="shortcut">
-         <string>0</string>
-        </property>
-        <attribute name="buttonGroup">
-         <string notr="true">main_buttons_group</string>
-        </attribute>
-       </widget>
-      </item>
-      <item row="5" column="5">
-       <widget class="QPushButton" name="pushButton_8">
-        <property name="sizePolicy">
-         <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
-          <horstretch>0</horstretch>
-          <verstretch>0</verstretch>
-         </sizepolicy>
-        </property>
-        <property name="minimumSize">
-         <size>
-          <width>60</width>
-          <height>65</height>
-         </size>
-        </property>
-        <property name="maximumSize">
-         <size>
-          <width>150</width>
-          <height>16777215</height>
-         </size>
-        </property>
-        <property name="styleSheet">
-         <string notr="true">QPushButton {
-  font-size: 20px;
-  background-color: rgb(224, 224, 224);
-  border: 1px solid gray;
-  border-radius: 8px;
-}
-QPushButton:pressed {
-    background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
-                                      stop: 0 #dadbde, stop: 1 #f6f7fa);
-}</string>
-        </property>
-        <property name="text">
-         <string>8</string>
-        </property>
-        <property name="shortcut">
-         <string>8</string>
-        </property>
-        <attribute name="buttonGroup">
-         <string notr="true">main_buttons_group</string>
-        </attribute>
-       </widget>
-      </item>
-      <item row="4" column="4">
-       <widget class="QPushButton" name="pushButton_4">
-        <property name="sizePolicy">
-         <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
-          <horstretch>0</horstretch>
-          <verstretch>0</verstretch>
-         </sizepolicy>
-        </property>
-        <property name="minimumSize">
-         <size>
-          <width>60</width>
-          <height>65</height>
-         </size>
-        </property>
-        <property name="maximumSize">
-         <size>
-          <width>150</width>
-          <height>16777215</height>
-         </size>
-        </property>
-        <property name="styleSheet">
-         <string notr="true">QPushButton {
-  font-size: 20px;
-  background-color: rgb(224, 224, 224);
-  border: 1px solid gray;
-  border-radius: 8px;
-}
-QPushButton:pressed {
-    background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
-                                      stop: 0 #dadbde, stop: 1 #f6f7fa);
-}</string>
-        </property>
-        <property name="text">
-         <string>4</string>
-        </property>
-        <property name="shortcut">
-         <string>4</string>
-        </property>
-        <attribute name="buttonGroup">
-         <string notr="true">main_buttons_group</string>
-        </attribute>
-       </widget>
-      </item>
-      <item row="3" column="7">
-       <widget class="QPushButton" name="pushButton_mul">
-        <property name="minimumSize">
-         <size>
-          <width>60</width>
-          <height>65</height>
-         </size>
-        </property>
-        <property name="maximumSize">
-         <size>
-          <width>150</width>
-          <height>16777215</height>
-         </size>
-        </property>
-        <property name="styleSheet">
-         <string notr="true">QPushButton {
-  font-size: 20px;
-  background-color: rgb(255, 157, 96);
-  color: white; 
-  border: 1px solid gray;
-  border-radius: 8px;
-}
-
-QPushButton:pressed {
-    background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
-                                      stop: 0 #FF7832, stop: 1 #FF9739);
-}</string>
-        </property>
-        <property name="text">
-         <string>*</string>
-        </property>
-        <property name="shortcut">
-         <string>*</string>
-        </property>
-        <attribute name="buttonGroup">
-         <string notr="true">main_buttons_group</string>
-        </attribute>
-       </widget>
-      </item>
-      <item row="4" column="3">
-       <widget class="QPushButton" name="pushButton_log">
-        <property name="minimumSize">
-         <size>
-          <width>60</width>
-          <height>65</height>
-         </size>
-        </property>
-        <property name="maximumSize">
-         <size>
-          <width>150</width>
-          <height>16777215</height>
-         </size>
-        </property>
-        <property name="styleSheet">
-         <string notr="true">QPushButton {
-  font-size: 15px;
+  font-size: 16px;
   background-color: rgb(214, 214, 214);
   border: 1px solid gray;
   border-radius: 8px;
@@ -681,15 +943,15 @@ QPushButton:pressed {
 }</string>
         </property>
         <property name="text">
-         <string>log</string>
+         <string>sqrt</string>
         </property>
         <attribute name="buttonGroup">
          <string notr="true">function_buttons_group</string>
         </attribute>
        </widget>
       </item>
-      <item row="4" column="7">
-       <widget class="QPushButton" name="pushButton_sub">
+      <item row="2" column="5">
+       <widget class="QPushButton" name="pushButton_lbr">
         <property name="minimumSize">
          <size>
           <width>60</width>
@@ -704,26 +966,58 @@ QPushButton:pressed {
         </property>
         <property name="styleSheet">
          <string notr="true">QPushButton {
-  font-size: 20px;
-  background-color: rgb(255, 157, 96);
-  color: white; 
+  font-size: 16px;
+  background-color: rgb(214, 214, 214);
   border: 1px solid gray;
   border-radius: 8px;
 }
-
 QPushButton:pressed {
     background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
-                                      stop: 0 #FF7832, stop: 1 #FF9739);
+                                      stop: 0 #BEBEBE, stop: 1 #D7D7D7);
 }</string>
         </property>
         <property name="text">
-         <string>-</string>
+         <string>)</string>
         </property>
         <property name="shortcut">
-         <string>-</string>
+         <string>)</string>
         </property>
         <attribute name="buttonGroup">
          <string notr="true">main_buttons_group</string>
+        </attribute>
+       </widget>
+      </item>
+      <item row="4" column="2">
+       <widget class="QPushButton" name="pushButton_ln">
+        <property name="minimumSize">
+         <size>
+          <width>60</width>
+          <height>65</height>
+         </size>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>150</width>
+          <height>16777215</height>
+         </size>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QPushButton {
+  font-size: 16px;
+  background-color: rgb(214, 214, 214);
+  border: 1px solid gray;
+  border-radius: 8px;
+}
+QPushButton:pressed {
+    background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                                      stop: 0 #BEBEBE, stop: 1 #D7D7D7);
+}</string>
+        </property>
+        <property name="text">
+         <string>ln</string>
+        </property>
+        <attribute name="buttonGroup">
+         <string notr="true">function_buttons_group</string>
         </attribute>
        </widget>
       </item>
@@ -760,142 +1054,6 @@ QPushButton:pressed {
         </property>
         <property name="shortcut">
          <string>+</string>
-        </property>
-        <attribute name="buttonGroup">
-         <string notr="true">main_buttons_group</string>
-        </attribute>
-       </widget>
-      </item>
-      <item row="6" column="2">
-       <widget class="QPushButton" name="pushButton_acos">
-        <property name="minimumSize">
-         <size>
-          <width>60</width>
-          <height>65</height>
-         </size>
-        </property>
-        <property name="maximumSize">
-         <size>
-          <width>150</width>
-          <height>16777215</height>
-         </size>
-        </property>
-        <property name="styleSheet">
-         <string notr="true">QPushButton {
-  font-size: 15px;
-  background-color: rgb(214, 214, 214);
-  border: 1px solid gray;
-  border-radius: 8px;
-}
-QPushButton:pressed {
-    background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
-                                      stop: 0 #BEBEBE, stop: 1 #D7D7D7);
-}</string>
-        </property>
-        <property name="text">
-         <string>acos</string>
-        </property>
-        <attribute name="buttonGroup">
-         <string notr="true">function_buttons_group</string>
-        </attribute>
-       </widget>
-      </item>
-      <item row="5" column="1">
-       <widget class="QPushButton" name="pushButton_sin">
-        <property name="minimumSize">
-         <size>
-          <width>60</width>
-          <height>65</height>
-         </size>
-        </property>
-        <property name="maximumSize">
-         <size>
-          <width>150</width>
-          <height>16777215</height>
-         </size>
-        </property>
-        <property name="styleSheet">
-         <string notr="true">QPushButton {
-  font-size: 15px;
-  background-color: rgb(214, 214, 214);
-  border: 1px solid gray;
-  border-radius: 8px;
-}
-QPushButton:pressed {
-    background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
-                                      stop: 0 #BEBEBE, stop: 1 #D7D7D7);
-}</string>
-        </property>
-        <property name="text">
-         <string>sin</string>
-        </property>
-        <attribute name="buttonGroup">
-         <string notr="true">function_buttons_group</string>
-        </attribute>
-       </widget>
-      </item>
-      <item row="5" column="3">
-       <widget class="QPushButton" name="pushButton_tan">
-        <property name="minimumSize">
-         <size>
-          <width>60</width>
-          <height>65</height>
-         </size>
-        </property>
-        <property name="maximumSize">
-         <size>
-          <width>150</width>
-          <height>16777215</height>
-         </size>
-        </property>
-        <property name="styleSheet">
-         <string notr="true">QPushButton {
-  font-size: 15px;
-  background-color: rgb(214, 214, 214);
-  border: 1px solid gray;
-  border-radius: 8px;
-}
-QPushButton:pressed {
-    background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
-                                      stop: 0 #BEBEBE, stop: 1 #D7D7D7);
-}</string>
-        </property>
-        <property name="text">
-         <string>tan</string>
-        </property>
-        <attribute name="buttonGroup">
-         <string notr="true">function_buttons_group</string>
-        </attribute>
-       </widget>
-      </item>
-      <item row="2" column="6">
-       <widget class="QPushButton" name="pushButton_mod">
-        <property name="minimumSize">
-         <size>
-          <width>60</width>
-          <height>65</height>
-         </size>
-        </property>
-        <property name="maximumSize">
-         <size>
-          <width>150</width>
-          <height>16777215</height>
-         </size>
-        </property>
-        <property name="styleSheet">
-         <string notr="true">QPushButton {
-  font-size: 15px;
-  background-color: rgb(214, 214, 214);
-  border: 1px solid gray;
-  border-radius: 8px;
-}
-QPushButton:pressed {
-    background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
-                                      stop: 0 #BEBEBE, stop: 1 #D7D7D7);
-}</string>
-        </property>
-        <property name="text">
-         <string>mod</string>
         </property>
         <attribute name="buttonGroup">
          <string notr="true">main_buttons_group</string>
@@ -945,8 +1103,79 @@ QPushButton:pressed {
         </attribute>
        </widget>
       </item>
-      <item row="3" column="6">
-       <widget class="QPushButton" name="pushButton_3">
+      <item row="3" column="3">
+       <widget class="QPushButton" name="pushButton_pow">
+        <property name="minimumSize">
+         <size>
+          <width>60</width>
+          <height>65</height>
+         </size>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>150</width>
+          <height>16777215</height>
+         </size>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QPushButton {
+  font-size: 16px;
+  background-color: rgb(214, 214, 214);
+  border: 1px solid gray;
+  border-radius: 8px;
+}
+QPushButton:pressed {
+    background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                                      stop: 0 #BEBEBE, stop: 1 #D7D7D7);
+}</string>
+        </property>
+        <property name="text">
+         <string>^</string>
+        </property>
+        <property name="shortcut">
+         <string>^</string>
+        </property>
+        <attribute name="buttonGroup">
+         <string notr="true">main_buttons_group</string>
+        </attribute>
+       </widget>
+      </item>
+      <item row="4" column="3">
+       <widget class="QPushButton" name="pushButton_log">
+        <property name="minimumSize">
+         <size>
+          <width>60</width>
+          <height>65</height>
+         </size>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>150</width>
+          <height>16777215</height>
+         </size>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QPushButton {
+  font-size: 16px;
+  background-color: rgb(214, 214, 214);
+  border: 1px solid gray;
+  border-radius: 8px;
+}
+QPushButton:pressed {
+    background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                                      stop: 0 #BEBEBE, stop: 1 #D7D7D7);
+}</string>
+        </property>
+        <property name="text">
+         <string>log</string>
+        </property>
+        <attribute name="buttonGroup">
+         <string notr="true">function_buttons_group</string>
+        </attribute>
+       </widget>
+      </item>
+      <item row="4" column="6">
+       <widget class="QPushButton" name="pushButton_6">
         <property name="sizePolicy">
          <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
           <horstretch>0</horstretch>
@@ -978,18 +1207,18 @@ QPushButton:pressed {
 }</string>
         </property>
         <property name="text">
-         <string>3</string>
+         <string>6</string>
         </property>
         <property name="shortcut">
-         <string>3</string>
+         <string>6</string>
         </property>
         <attribute name="buttonGroup">
          <string notr="true">main_buttons_group</string>
         </attribute>
        </widget>
       </item>
-      <item row="4" column="2">
-       <widget class="QPushButton" name="pushButton_ln">
+      <item row="2" column="7">
+       <widget class="QPushButton" name="pushButton_div">
         <property name="minimumSize">
          <size>
           <width>60</width>
@@ -1004,21 +1233,26 @@ QPushButton:pressed {
         </property>
         <property name="styleSheet">
          <string notr="true">QPushButton {
-  font-size: 15px;
-  background-color: rgb(214, 214, 214);
+  font-size: 20px;
+  background-color: rgb(255, 157, 96);
+  color: white; 
   border: 1px solid gray;
   border-radius: 8px;
 }
+
 QPushButton:pressed {
     background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
-                                      stop: 0 #BEBEBE, stop: 1 #D7D7D7);
+                                      stop: 0 #FF7832, stop: 1 #FF9739);
 }</string>
         </property>
         <property name="text">
-         <string>ln</string>
+         <string>/</string>
+        </property>
+        <property name="shortcut">
+         <string>/</string>
         </property>
         <attribute name="buttonGroup">
-         <string notr="true">function_buttons_group</string>
+         <string notr="true">main_buttons_group</string>
         </attribute>
        </widget>
       </item>
@@ -1044,7 +1278,7 @@ QPushButton:pressed {
         </property>
         <property name="styleSheet">
          <string notr="true">QPushButton {
-  font-size: 15px;
+  font-size: 16px;
   background-color: rgb(214, 214, 214);
   border: 1px solid gray;
   border-radius: 8px;
@@ -1059,160 +1293,6 @@ QPushButton:pressed {
         </property>
         <attribute name="buttonGroup">
          <string notr="true">function_buttons_group</string>
-        </attribute>
-       </widget>
-      </item>
-      <item row="6" column="6">
-       <widget class="QPushButton" name="pushButton_dot">
-        <property name="sizePolicy">
-         <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
-          <horstretch>0</horstretch>
-          <verstretch>0</verstretch>
-         </sizepolicy>
-        </property>
-        <property name="minimumSize">
-         <size>
-          <width>60</width>
-          <height>65</height>
-         </size>
-        </property>
-        <property name="maximumSize">
-         <size>
-          <width>150</width>
-          <height>16777215</height>
-         </size>
-        </property>
-        <property name="styleSheet">
-         <string notr="true">QPushButton {
-  font-size: 20px;
-  background-color: rgb(224, 224, 224);
-  border: 1px solid gray;
-  border-radius: 8px;
-}
-QPushButton:pressed {
-    background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
-                                      stop: 0 #dadbde, stop: 1 #f6f7fa);
-}</string>
-        </property>
-        <property name="text">
-         <string>.</string>
-        </property>
-        <property name="shortcut">
-         <string>.</string>
-        </property>
-       </widget>
-      </item>
-      <item row="6" column="1">
-       <widget class="QPushButton" name="pushButton_asin">
-        <property name="minimumSize">
-         <size>
-          <width>60</width>
-          <height>65</height>
-         </size>
-        </property>
-        <property name="maximumSize">
-         <size>
-          <width>150</width>
-          <height>16777215</height>
-         </size>
-        </property>
-        <property name="styleSheet">
-         <string notr="true">QPushButton {
-  font-size: 15px;
-  background-color: rgb(214, 214, 214);
-  border: 1px solid gray;
-  border-radius: 8px;
-}
-QPushButton:pressed {
-    background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
-                                      stop: 0 #BEBEBE, stop: 1 #D7D7D7);
-}</string>
-        </property>
-        <property name="text">
-         <string>asin</string>
-        </property>
-        <attribute name="buttonGroup">
-         <string notr="true">function_buttons_group</string>
-        </attribute>
-       </widget>
-      </item>
-      <item row="3" column="5">
-       <widget class="QPushButton" name="pushButton_2">
-        <property name="sizePolicy">
-         <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
-          <horstretch>0</horstretch>
-          <verstretch>0</verstretch>
-         </sizepolicy>
-        </property>
-        <property name="minimumSize">
-         <size>
-          <width>60</width>
-          <height>65</height>
-         </size>
-        </property>
-        <property name="maximumSize">
-         <size>
-          <width>150</width>
-          <height>16777215</height>
-         </size>
-        </property>
-        <property name="styleSheet">
-         <string notr="true">QPushButton {
-  font-size: 20px;
-  background-color: rgb(224, 224, 224);
-  border: 1px solid gray;
-  border-radius: 8px;
-}
-QPushButton:pressed {
-    background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
-                                      stop: 0 #dadbde, stop: 1 #f6f7fa);
-}</string>
-        </property>
-        <property name="text">
-         <string>2</string>
-        </property>
-        <property name="shortcut">
-         <string>2</string>
-        </property>
-        <attribute name="buttonGroup">
-         <string notr="true">main_buttons_group</string>
-        </attribute>
-       </widget>
-      </item>
-      <item row="2" column="5">
-       <widget class="QPushButton" name="pushButton_lbr">
-        <property name="minimumSize">
-         <size>
-          <width>60</width>
-          <height>65</height>
-         </size>
-        </property>
-        <property name="maximumSize">
-         <size>
-          <width>150</width>
-          <height>16777215</height>
-         </size>
-        </property>
-        <property name="styleSheet">
-         <string notr="true">QPushButton {
-  font-size: 15px;
-  background-color: rgb(214, 214, 214);
-  border: 1px solid gray;
-  border-radius: 8px;
-}
-QPushButton:pressed {
-    background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
-                                      stop: 0 #BEBEBE, stop: 1 #D7D7D7);
-}</string>
-        </property>
-        <property name="text">
-         <string>)</string>
-        </property>
-        <property name="shortcut">
-         <string>)</string>
-        </property>
-        <attribute name="buttonGroup">
-         <string notr="true">main_buttons_group</string>
         </attribute>
        </widget>
       </item>
@@ -1232,7 +1312,7 @@ QPushButton:pressed {
         </property>
         <property name="styleSheet">
          <string notr="true">QPushButton {
-  font-size: 15px;
+  font-size: 16px;
   background-color: rgb(214, 214, 214);
   border: 1px solid gray;
   border-radius: 8px;
@@ -1253,8 +1333,8 @@ QPushButton:pressed {
         </attribute>
        </widget>
       </item>
-      <item row="2" column="3">
-       <widget class="QPushButton" name="pushButton_X">
+      <item row="3" column="2">
+       <widget class="QPushButton" name="pushButton_e">
         <property name="minimumSize">
          <size>
           <width>60</width>
@@ -1269,7 +1349,7 @@ QPushButton:pressed {
         </property>
         <property name="styleSheet">
          <string notr="true">QPushButton {
-  font-size: 20px;
+  font-size: 16px;
   background-color: rgb(214, 214, 214);
   border: 1px solid gray;
   border-radius: 8px;
@@ -1280,18 +1360,18 @@ QPushButton:pressed {
 }</string>
         </property>
         <property name="text">
-         <string>x</string>
+         <string>E</string>
         </property>
         <property name="shortcut">
-         <string>X</string>
+         <string>Ctrl+S</string>
         </property>
         <attribute name="buttonGroup">
          <string notr="true">main_buttons_group</string>
         </attribute>
        </widget>
       </item>
-      <item row="3" column="3">
-       <widget class="QPushButton" name="pushButton_pow">
+      <item row="3" column="1">
+       <widget class="QPushButton" name="pushButton_pi">
         <property name="minimumSize">
          <size>
           <width>60</width>
@@ -1306,7 +1386,7 @@ QPushButton:pressed {
         </property>
         <property name="styleSheet">
          <string notr="true">QPushButton {
-  font-size: 15px;
+  font-size: 16px;
   background-color: rgb(214, 214, 214);
   border: 1px solid gray;
   border-radius: 8px;
@@ -1317,7 +1397,7 @@ QPushButton:pressed {
 }</string>
         </property>
         <property name="text">
-         <string>^</string>
+         <string>π</string>
         </property>
         <property name="shortcut">
          <string>^</string>
@@ -1325,37 +1405,6 @@ QPushButton:pressed {
         <attribute name="buttonGroup">
          <string notr="true">main_buttons_group</string>
         </attribute>
-       </widget>
-      </item>
-      <item row="3" column="1" colspan="2">
-       <widget class="QPushButton" name="pushButton_rad">
-        <property name="minimumSize">
-         <size>
-          <width>60</width>
-          <height>65</height>
-         </size>
-        </property>
-        <property name="maximumSize">
-         <size>
-          <width>150</width>
-          <height>16777215</height>
-         </size>
-        </property>
-        <property name="styleSheet">
-         <string notr="true">QPushButton {
-  font-size: 15px;
-  background-color: rgb(214, 214, 214);
-  border: 1px solid gray;
-  border-radius: 8px;
-}
-QPushButton:pressed {
-    background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
-                                      stop: 0 #BEBEBE, stop: 1 #D7D7D7);
-}</string>
-        </property>
-        <property name="text">
-         <string>Rad/Deg</string>
-        </property>
        </widget>
       </item>
      </layout>
@@ -1380,7 +1429,11 @@ QPushButton:pressed {
    </widget>
    <addaction name="menuOptions"/>
   </widget>
-  <widget class="QStatusBar" name="statusBar"/>
+  <widget class="QStatusBar" name="statusBar">
+   <property name="layoutDirection">
+    <enum>Qt::LeftToRight</enum>
+   </property>
+  </widget>
   <action name="actionCredit_calculator">
    <property name="text">
     <string>Credit calculator</string>
@@ -1395,7 +1448,7 @@ QPushButton:pressed {
  <resources/>
  <connections/>
  <buttongroups>
-  <buttongroup name="main_buttons_group"/>
   <buttongroup name="function_buttons_group"/>
+  <buttongroup name="main_buttons_group"/>
  </buttongroups>
 </ui>

@@ -1,4 +1,4 @@
-#include "graphics.h"
+#include "graphics.hpp"
 
 #include "ui_graphics.h"
 
@@ -27,6 +27,8 @@ void Graphics::build_graphic() {
 
     s21_deque_t *rpn = s21_parse_exp(str_exp);
     double X = xBegin;
+    x.clear();
+    y.clear();
     while (X <= xEnd) {
       x.push_back(X);
       y.push_back(s21_calculate_rpn(rpn, X));
@@ -34,9 +36,12 @@ void Graphics::build_graphic() {
     }
 
     s21_delete_deque(rpn);
+
+    ui->widget->setInteraction(QCP::iRangeZoom, true);
+    ui->widget->setInteraction(QCP::iRangeDrag, true);
+    ui->widget->clearGraphs();
     ui->widget->addGraph();
     ui->widget->graph(0)->addData(x, y);
     ui->widget->replot();
-  } else {
   }
 }

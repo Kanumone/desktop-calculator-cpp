@@ -5,21 +5,21 @@
 
 #test simple_cases
 
-char exp_1[] = "1 + 2";
+char exp_1[] = "1+2";
 s21_deque_t *rpn_1 = s21_parse_exp(exp_1);
 
 double result_1 = s21_calculate_rpn(rpn_1, 0);
 s21_delete_deque(rpn_1);
 ck_assert_double_eq_tol(3.0, result_1, 7);
 
-char exp_2[] = "5 * 4";
+char exp_2[] = "-5 * 4";
 s21_deque_t *rpn_2 = s21_parse_exp(exp_2);
 
 double result_2 = s21_calculate_rpn(rpn_2, 0);
 s21_delete_deque(rpn_2);
-ck_assert_double_eq_tol(20.0, result_2, 7);
+ck_assert_double_eq_tol(-20.0, result_2, 7);
 
-char exp_3[] = "1 + 2 * 5";
+char exp_3[] = "1 - 2 *(-5)";
 s21_deque_t *rpn_3 = s21_parse_exp(exp_3);
 
 double result_3 = s21_calculate_rpn(rpn_3, 0);
@@ -144,30 +144,28 @@ ck_assert_double_eq_tol(11.0, result_3, 7);
 
 #test exp_case
 
-char exp_1[] = "1e10 * 1e-10";
+char exp_1[] = "1E10 * 1E-10";
 s21_deque_t *rpn_1 = s21_parse_exp(exp_1);
 
 double result_1 = s21_calculate_rpn(rpn_1, 0.5);
 s21_delete_deque(rpn_1);
 ck_assert_double_eq_tol(1.0, result_1, 7);
 
-char exp_2[] = "5 / 1e5";
+char exp_2[] = "5 / 1E5";
 s21_deque_t *rpn_2 = s21_parse_exp(exp_2);
 
 double result_2 = s21_calculate_rpn(rpn_2, 5);
 s21_delete_deque(rpn_2);
-ck_assert_double_eq_tol(5e-5, result_2, 7);
+ck_assert_double_eq_tol(5E-5, result_2, 7);
 
 #test structure_cases
 
 lex_t lex = {.priority = S21_NUMBER, .data.operand = 10.0};
 s21_deque_t *deque = s21_create_deque();
 s21_push_front(deque, lex);
-add_before(deque->front, lex);
-add_after(deque->front->prev, lex);
-add_before(deque->back, lex);
-deque->size += 3;
 s21_push_front(deque, lex);
+add_after(deque->front->prev, lex);
+delete_node(deque->front->prev);
 s21_clear_deque(deque);
 s21_pop_front(deque);
 s21_delete_deque(deque);

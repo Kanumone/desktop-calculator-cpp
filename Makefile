@@ -1,5 +1,5 @@
 #>>>>>>>>>>>     Makefile     <<<<<<<<<<<#
-.PHONY: all clean install uninstall dvi tests leaks linter
+.PHONY: all clean install uninstall dvi dist tests leaks linter
 
 #>>>>>>>>>>>     Exec file     <<<<<<<<<<<#
 EXEC=C7_SmartCalc_v1.0-0
@@ -7,18 +7,18 @@ EXEC=C7_SmartCalc_v1.0-0
 #>>>>>>>>>>>     Flags     <<<<<<<<<<<#
 CC=gcc
 CFLAGS=-Wall -Werror -Wextra -std=c11
-CPPCHECKFLAG := --enable=all -std=c11
+CPPCHECKFLAG=--enable=all --std=c11 --suppress=missingInclude
 GFLAGS=-lcheck
 
 OS=$(shell uname)
 ifeq ($(OC), Linux)
-	GFLAGS+= -lm -lpthread -lrt -lsubunit -D_GNU_SOURCE
-	LEAKS=valgrind --leak-check=full ./$(EXEC)
+GFLAGS+= -lm -lpthread -lrt -lsubunit -D_GNU_SOURCE
+LEAKS := valgrind --leak-check=full ./tests/calc_test
 else
-	LEAKS=CK_FORK=no leaks -atExit -- ./$(EXEC)
+LEAKS := CK_FORK=no leaks -atExit -- ./tests/calc_test
 endif
 
-TESTFLAGS=-g -fprofile-arcs -ftest-coverage $(GFLAGS)
+TESTFLAGS := -g -fprofile-arcs -ftest-coverage $(GFLAGS)
 
 #>>>>>>>>>>>     Paths     <<<<<<<<<<<#
 P_SRC := ./source
@@ -28,34 +28,34 @@ P_LINT := ../materials/linters
 P_TEST := ./tests
 
 #>>>>>>>>>>>     Source files     <<<<<<<<<<<#
-SRC=$(wildcard $(P_SRC)/*.c)
-OBJ=$(SRC:.c=.o)
-kk:
-	echo $(OBJ)
+SRC := $(wildcard $(P_SRC)/*.c)
+CHECK_SRC=$(wildcard $(P_INC)/[!q]* $(P_SRC)/[!q]*)
+
+#>>>>>>>>>>>     All target     <<<<<<<<<<<#
+all: install run
 
 #>>>>>>>>>>>     Style check     <<<<<<<<<<<#
 linter:
 	cp $(P_LINT)/CPPLINT.cfg .
-	python3 $(P_LINT)/cpplint.py $(P_INC)/*.h $(P_SRC)/*.c $(P_SRC)/*.cpp
+	-python3 $(P_LINT)/cpplint.py $(CHECK_SRC)
 	rm -rf CPPLINT.cfg
-	cppcheck $(CPPCHECKFLAG) $(P_INC)/*.h $(P_SRC)/*.c $(P_SRC)/*.cpp
+	cppcheck $(CPPCHECKFLAG) $(CHECK_SRC)
 
 #>>>>>>>>>>>     Leaks check     <<<<<<<<<<<#
-leaks: $(EXEC)
+leaks: tests
 	$(LEAKS)
 
 #>>>>>>>>>>>     Creating C object files     <<<<<<<<<<<#
 %.o : %.c
 	$(CC) $(CFLAGS) -c -o $@ $< -I ./include
 
-tests: $(OBJ)
-	checkmk clean_mode=1 $(P_TEST)/calc_test.check >> $(P_TEST)/calc_test.c
-	gcc $(CFLAGS) $(P_TEST)/calc_test.c $(OBJ) -L $(P_TEST) -o $(P_TEST)/calc_test -I $(P_INC) $(TESTFLAGS)
+tests: $(SRC)
+	checkmk clean_mode=1 $(P_TEST)/calc_test.check > $(P_TEST)/calc_test.c
+	gcc $(CFLAGS) $(P_TEST)/calc_test.c $(SRC) -L $(P_SRC) -o $(P_TEST)/calc_test -I $(P_INC) $(TESTFLAGS)
 	$(P_TEST)/calc_test
 
 gcov_report: tests
-	cd $(P_TEST);
-	gcovr -r .. --html-details -o gcov_report.html
+	gcovr -r . --html-details -o gcov_report.html
 	open gcov_report.html
 
 clean: cleancov
@@ -76,6 +76,14 @@ uninstall: Qmakefile
 	make -f Qmakefile uninstall INSTALL_ROOT=build
 	rm -rf build .qm
 	rm Qmakefile .qmake.stash
+
+#>>>>>>>>>>>     Documentation     <<<<<<<<<<<#
+dvi:
+	open ./docs/index.html
+
+#>>>>>>>>>>>     Archiving     <<<<<<<<<<<#
+dist:
+	tar -czf $(EXEC).tgz ./*
 
 run:
 ifeq ($(OS), Darwin)

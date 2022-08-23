@@ -31,10 +31,10 @@ SOURCES += \
     source/qcustomplot.cpp
 
 HEADERS += \
-    include/creditcalc.h \
-    include/debitcalc.h \
-    include/graphics.h \
-    include/mainwindow.h \
+    include/creditcalc.hpp \
+    include/debitcalc.hpp \
+    include/graphics.hpp \
+    include/mainwindow.hpp \
     include/s21_parser.h \
     include/s21_structures.h \
     include/s21_calculator.h \

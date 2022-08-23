@@ -12,6 +12,14 @@ double (*binary_function[])(double, double) = {s21_mul, s21_sum, pow, s21_sub, f
 double (*unary_function[])(double) = {NULL, NULL, NULL, NULL, NULL,  NULL, sin, cos,
                                       tan,  asin, acos, atan, log10, log,  sqrt};
 
+/*!
+ * \fn double s21_calculate_rpn(s21_deque_t *rpn, double x)
+ * @brief Функция для расчета обратной польской нотации из очереди
+ * @author Santiago
+ * @param rpn Очередь с обратной польской нотацией
+ * @param x Значение переменной, используемой в выражении
+ * @return Скалькулированное значение
+ */
 double s21_calculate_rpn(s21_deque_t *rpn, double x) {
   s21_deque_t *calc_stack = s21_create_deque();
   list_t *back_address = rpn->back;
